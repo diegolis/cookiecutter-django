@@ -152,50 +152,15 @@ def generate_random_user():
     return generate_random_string(length=32, using_ascii_letters=True)
 
 
-def generate_postgres_user(debug=False):
-    return DEBUG_VALUE if debug else generate_random_user()
-
-
-def set_postgres_user(file_path, value):
-    postgres_user = set_flag(file_path, "!!!SET POSTGRES_USER!!!", value=value)
-    return postgres_user
-
-
-def set_postgres_password(file_path, value=None):
-    postgres_password = set_flag(
-        file_path,
-        "!!!SET POSTGRES_PASSWORD!!!",
-        value=value,
-        length=64,
-        using_digits=True,
-        using_ascii_letters=True,
-    )
-    return postgres_password
-
-
 def append_to_gitignore_file(s):
     with open(".gitignore", "a") as gitignore_file:
         gitignore_file.write(s)
         gitignore_file.write(os.linesep)
 
 
-def set_flags_in_envs(postgres_user, debug=False):
-    local_django_envs_path = os.path.join(".envs", ".local", ".django")
-    production_django_envs_path = os.path.join(".envs", ".production", ".django")
-    local_postgres_envs_path = os.path.join(".envs", ".local", ".postgres")
-    production_postgres_envs_path = os.path.join(".envs", ".production", ".postgres")
-
+def set_flags_in_envs(debug=False):
     set_django_secret_key(production_django_envs_path)
     set_django_admin_url(production_django_envs_path)
-
-    set_postgres_user(local_postgres_envs_path, value=postgres_user)
-    set_postgres_password(
-        local_postgres_envs_path, value=DEBUG_VALUE if debug else None
-    )
-    set_postgres_user(production_postgres_envs_path, value=postgres_user)
-    set_postgres_password(
-        production_postgres_envs_path, value=DEBUG_VALUE if debug else None
-    )
 
 
 def set_flags_in_settings_files():
@@ -219,9 +184,7 @@ def remove_aws_dockerfile():
 def main():
     debug = "{{ cookiecutter.debug }}".lower() == "y"
 
-    set_flags_in_envs(
-        debug=debug,
-    )
+    set_flags_in_envs(debug)
     set_flags_in_settings_files()
 
     if "{{ cookiecutter.open_source_license }}" == "Not open source":
