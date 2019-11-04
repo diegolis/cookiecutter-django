@@ -4,7 +4,7 @@ services:
   django:
     build:
       context: .
-      dockerfile: ./compose/production/django/Dockerfile
+      dockerfile: ./compose/production/Dockerfile
     image: {{ cookiecutter.project_slug }}_production_django
     depends_on:
       - postgres
