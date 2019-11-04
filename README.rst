@@ -142,17 +142,7 @@ Answer the prompts with your own desired options_. For example::
     email [you@example.com]: pydanny@gmail.com
     description [Behold My Awesome Project!]: A reddit clone.
     domain_name [example.com]: myreddit.com
-    version [0.1.0]: 0.0.1
-    timezone [UTC]: America/Los_Angeles
     use_whitenoise [n]: n
-    use_docker [n]: n
-    Select postgresql_version:
-    1 - 11.3
-    2 - 10.8
-    3 - 9.6
-    4 - 9.5
-    5 - 9.4
-    Choose from 1, 2, 3, 4, 5 [1]: 1
     Select cloud_provider:
     1 - AWS
     2 - GCP

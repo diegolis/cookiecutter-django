@@ -2,24 +2,15 @@
   "project_name": "My Awesome Project",
   "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
   "description": "Behold My Awesome Project!",
-  "author_name": "Diego Lis",
+  "author_name": "",
   "domain_name": "{{cookiecutter.project_slug}}.tagx.infoxel.com",
   "email": "{{ cookiecutter.author_name.lower()|replace(' ', '') }}@infoxel.com",
-  "version": "0.1.0",
-  "timezone": "UTC",
-  "use_docker": "y",
-  "postgresql_version": [
-    "11.3",
-    "10.8",
-    "9.6",
-    "9.5",
-    "9.4"
-  ],
   "cloud_provider": [
     "GCP",
     "AWS",
     "None"
   ],
   "use_whitenoise": "y",
+  "model_name": "",
   "debug": "n"
 }
