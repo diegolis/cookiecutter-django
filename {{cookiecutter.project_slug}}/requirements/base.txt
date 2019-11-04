@@ -23,3 +23,9 @@ djangorestframework==3.10.3  # https://github.com/encode/django-rest-framework
 django-filter
 
 -e git+https://gitlab+deploy-token-106917:ggxTmaGVQ8ZLSEPMMcKJ@gitlab.com/infoxel/tagx.git@master#egg=users&subdirectory=libs/users
+
+
+{% if cookiecutter.use_elastic %}
+elasticsearch-dsl>=7.0.0,<8.0.0
+django-elasticsearch-dsl
+{% endif %}

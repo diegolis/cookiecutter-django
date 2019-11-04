@@ -14,13 +14,13 @@ RUN apk update \
   && apk add gettext \
   # https://docs.djangoproject.com/en/dev/ref/django-admin/#dbshell
   && apk add postgresql-client \
-  && apk add libxml2-dev libxslt-dev
+  && apk add libxml2-dev libxslt-dev \
   && apk add git
 
 COPY ./requirements /requirements
 RUN pip install -r /requirements/local.txt
 
-COPY ./compose/local/django/start /start
+COPY ./compose/local/start /start
 RUN sed -i 's/\r$//g' /start
 RUN chmod +x /start
 

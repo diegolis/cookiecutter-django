@@ -3,12 +3,12 @@ version: '3'
 services:
   django:
     build:
-      context: .
-      dockerfile: ./compose/production/Dockerfile
+      context: ../../
+      dockerfile: compose/production/Dockerfile
     image: {{ cookiecutter.project_slug }}_production_django
     depends_on:
       - postgres
       - redis
     env_file:
-      - ./.envs/production
+      - ../../.envs/production
     command: /start

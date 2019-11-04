@@ -160,7 +160,6 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
-                "{{ cookiecutter.project_slug }}.utils.context_processors.settings_context",
             ],
         },
     }
@@ -213,6 +212,14 @@ LOGGING = {
     "root": {"level": "INFO", "handlers": ["console"]},
 }
 
+
+{% if cookiecutter.use_elastic %}
+ELASTICSEARCH_DSL={
+    'default': {
+        'hosts': env("ELASTICSEARCH_HOST")
+    },
+}
+{% endif %}
 
 # Your stuff...
 # ------------------------------------------------------------------------------

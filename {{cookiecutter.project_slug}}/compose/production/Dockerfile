@@ -14,7 +14,7 @@ RUN apk update \
   && apk add gettext \
   # https://docs.djangoproject.com/en/dev/ref/django-admin/#dbshell
   && apk add postgresql-client \
-  && apk add libxml2-dev libxslt-dev
+  && apk add libxml2-dev libxslt-dev \
   && apk add git
 
 RUN pip install gunicorn psycopg2-binary
@@ -22,11 +22,11 @@ COPY ./requirements /requirements
 RUN pip install --no-cache-dir -r /requirements/production.txt \
     && rm -rf /requirements
 
-COPY ./compose/production/django/entrypoint /entrypoint
+COPY ./compose/production/entrypoint /entrypoint
 RUN sed -i 's/\r$//g' /entrypoint
 RUN chmod +x /entrypoint
 
-COPY ./compose/production/django/start /start
+COPY ./compose/production/start /start
 RUN sed -i 's/\r$//g' /start
 RUN chmod +x /start
 

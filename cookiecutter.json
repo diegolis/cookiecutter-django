@@ -12,5 +12,6 @@
   ],
   "use_whitenoise": "y",
   "model_name": "",
+  "use_elastic": "y",
   "debug": "n"
 }
