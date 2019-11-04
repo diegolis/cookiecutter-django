@@ -258,12 +258,6 @@ def main():
     append_to_gitignore_file(".env")
     append_to_gitignore_file(".envs/*")
 
-    if "{{ cookiecutter.js_task_runner}}".lower() == "none":
-        remove_gulp_files()
-        remove_packagejson_file()
-        if "{{ cookiecutter.use_docker }}".lower() == "y":
-            remove_node_dockerfile()
-
     if "{{ cookiecutter.cloud_provider}}".lower() == "none":
         print(
             WARNING + "You chose not to use a cloud provider, "
