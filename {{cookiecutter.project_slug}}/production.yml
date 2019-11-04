@@ -10,5 +10,5 @@ services:
       - postgres
       - redis
     env_file:
-      - ./prod.env
+      - ./.envs/production
     command: /start

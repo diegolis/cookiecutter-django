@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/app
     env_file:
-      - ./local.env
+      - ./.envs/local
     ports:
       - "8000:8000"
     command: /start
