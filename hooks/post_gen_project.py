@@ -31,44 +31,12 @@ SUCCESS = "\x1b[1;32m [SUCCESS]: "
 DEBUG_VALUE = "debug"
 
 
-def remove_open_source_files():
-    file_names = ["CONTRIBUTORS.txt", "LICENSE"]
-    for file_name in file_names:
-        os.remove(file_name)
-
-
-def remove_gplv3_files():
-    file_names = ["COPYING"]
-    for file_name in file_names:
-        os.remove(file_name)
-
-
 def remove_docker_files():
     shutil.rmtree("compose")
 
     file_names = ["local.yml", "production.yml", ".dockerignore"]
     for file_name in file_names:
         os.remove(file_name)
-
-
-def remove_utility_files():
-    shutil.rmtree("utility")
-
-
-def remove_gulp_files():
-    file_names = ["gulpfile.js"]
-    for file_name in file_names:
-        os.remove(file_name)
-
-
-def remove_packagejson_file():
-    file_names = ["package.json"]
-    for file_name in file_names:
-        os.remove(file_name)
-
-
-def remove_dottravisyml_file():
-    os.remove(".travis.yml")
 
 
 def append_to_project_gitignore(path):
