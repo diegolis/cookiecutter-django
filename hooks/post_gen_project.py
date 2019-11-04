@@ -220,8 +220,6 @@ def main():
     debug = "{{ cookiecutter.debug }}".lower() == "y"
 
     set_flags_in_envs(
-        DEBUG_VALUE if debug else generate_random_user(),
-        DEBUG_VALUE if debug else generate_random_user(),
         debug=debug,
     )
     set_flags_in_settings_files()
