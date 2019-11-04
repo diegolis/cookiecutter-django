@@ -24,23 +24,10 @@ CACHES = {
 }
 
 # EMAIL
-# ------------------------------------------------------------------------------
-{% if cookiecutter.use_mailhog == 'y' and cookiecutter.use_docker == 'y' -%}
-# https://docs.djangoproject.com/en/dev/ref/settings/#email-host
-EMAIL_HOST = env("EMAIL_HOST", default="mailhog")
-# https://docs.djangoproject.com/en/dev/ref/settings/#email-port
-EMAIL_PORT = 1025
-{%- elif cookiecutter.use_mailhog == 'y' and cookiecutter.use_docker == 'n' -%}
-# https://docs.djangoproject.com/en/dev/ref/settings/#email-host
-EMAIL_HOST = "localhost"
-# https://docs.djangoproject.com/en/dev/ref/settings/#email-port
-EMAIL_PORT = 1025
-{%- else -%}
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 EMAIL_BACKEND = env(
     "DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.console.EmailBackend"
 )
-{%- endif %}
 
 # django-debug-toolbar
 # ------------------------------------------------------------------------------
@@ -67,17 +54,5 @@ if env("USE_DOCKER") == "yes":
 # ------------------------------------------------------------------------------
 # https://django-extensions.readthedocs.io/en/latest/installation_instructions.html#configuration
 INSTALLED_APPS += ["django_extensions"]  # noqa F405
-{% if cookiecutter.use_celery == 'y' -%}
-
-# Celery
-# ------------------------------------------------------------------------------
-{% if cookiecutter.use_docker == 'n' -%}
-# http://docs.celeryproject.org/en/latest/userguide/configuration.html#task-always-eager
-CELERY_TASK_ALWAYS_EAGER = True
-{%- endif %}
-# http://docs.celeryproject.org/en/latest/userguide/configuration.html#task-eager-propagates
-CELERY_TASK_EAGER_PROPAGATES = True
-
-{%- endif %}
 # Your stuff...
 # ------------------------------------------------------------------------------

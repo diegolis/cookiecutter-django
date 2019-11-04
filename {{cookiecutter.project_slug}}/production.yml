@@ -6,7 +6,7 @@ volumes:
   production_traefik: {}
 
 services:
-  django:{% if cookiecutter.use_celery == 'y' %} &django{% endif %}
+  django:
     build:
       context: .
       dockerfile: ./compose/production/django/Dockerfile

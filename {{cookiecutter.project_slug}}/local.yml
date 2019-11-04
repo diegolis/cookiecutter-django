@@ -5,16 +5,13 @@ volumes:
   local_postgres_data_backups: {}
 
 services:
-  django:{% if cookiecutter.use_celery == 'y' %} &django{% endif %}
+  django:
     build:
       context: .
       dockerfile: ./compose/local/django/Dockerfile
     image: {{ cookiecutter.project_slug }}_local_django
     depends_on:
       - postgres
-      {%- if cookiecutter.use_mailhog == 'y' %}
-      - mailhog
-      {%- endif %}
     volumes:
       - .:/app
     env_file:
