@@ -4,13 +4,22 @@ python-slugify==4.0.0  # https://github.com/un33k/python-slugify
 whitenoise==4.1.4  # https://github.com/evansd/whitenoise
 {%- endif %}
 redis==3.3.11  # https://github.com/antirez/redis
+requests==2.22.0
+Werkzeug
 
 # Django
 # ------------------------------------------------------------------------------
 django==2.2.6  # pyup: < 3.0  # https://www.djangoproject.com/
 django-environ==0.4.5  # https://github.com/joke2k/django-environ
 django-redis==4.10.0  # https://github.com/niwinz/django-redis
-django_admin_listfilter_dropdown
+django-admin-list-filter-dropdown
+django-autocompletefilter
+django-cas-ng
+django-admin-shortcuts
+django-cors-headers==3.0.2
 
 # Django REST Framework
 djangorestframework==3.10.3  # https://github.com/encode/django-rest-framework
+django-filter
+
+-e git+https://gitlab+deploy-token-106917:ggxTmaGVQ8ZLSEPMMcKJ@gitlab.com/infoxel/tagx.git@master#egg=users&subdirectory=libs/users

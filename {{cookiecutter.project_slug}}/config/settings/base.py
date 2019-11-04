@@ -64,8 +64,6 @@ THIRD_PARTY_APPS = [
     "users",
     'cuser',
     'django_cas_ng',
-    'dal',
-    'dal_select2',
     'django_filters'
 ]
 

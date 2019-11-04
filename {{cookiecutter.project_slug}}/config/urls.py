@@ -6,7 +6,6 @@ import django_cas_ng.views as cas_views
 
 urlpatterns = [
     path('api/', include("api.urls")),
-    path('select2/', include('django_select2.urls')),
     path('accounts/login/', cas_views.LoginView.as_view(), name='cas_ng_login'),
     path('accounts/logout/', cas_views.LogoutView.as_view(), name='cas_ng_logout'),
     path(
