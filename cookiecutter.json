@@ -6,15 +6,8 @@
   "domain_name": "{{cookiecutter.project_slug}}.tagx.infoxel.com",
   "email": "{{ cookiecutter.author_name.lower()|replace(' ', '') }}@infoxel.com",
   "version": "0.1.0",
-  "open_source_license": [
-    "MIT",
-    "BSD",
-    "GPLv3",
-    "Apache Software License 2.0",
-    "Not open source"
-  ],
   "timezone": "UTC",
-  "use_docker": "n",
+  "use_docker": "y",
   "postgresql_version": [
     "11.3",
     "10.8",
@@ -23,11 +16,10 @@
     "9.4"
   ],
   "cloud_provider": [
-    "AWS",
     "GCP",
+    "AWS",
     "None"
   ],
-  "use_whitenoise": "n",
-  "use_travisci": "n",
+  "use_whitenoise": "y",
   "debug": "n"
 }

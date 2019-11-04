@@ -133,37 +133,12 @@ def set_flags_in_settings_files():
 
 def remove_envs_and_associated_files():
     shutil.rmtree(".envs")
-    os.remove("merge_production_dotenvs_in_dotenv.py")
-
-
-def remove_node_dockerfile():
-    shutil.rmtree(os.path.join("compose", "local", "node"))
-
-
-def remove_aws_dockerfile():
-    shutil.rmtree(os.path.join("compose", "production", "aws"))
 
 
 def main():
     debug = "{{ cookiecutter.debug }}".lower() == "y"
 
     set_flags_in_settings_files()
-
-    if "{{ cookiecutter.open_source_license }}" == "Not open source":
-        remove_open_source_files()
-    if "{{ cookiecutter.open_source_license}}" != "GPLv3":
-        remove_gplv3_files()
-
-    if "{{ cookiecutter.use_docker }}".lower() == "y":
-        remove_utility_files()
-    else:
-        remove_docker_files()
-
-    if (
-        "{{ cookiecutter.use_docker }}".lower() == "y"
-        and "{{ cookiecutter.cloud_provider}}".lower() != "aws"
-    ):
-        remove_aws_dockerfile()
 
     append_to_gitignore_file(".env")
     append_to_gitignore_file(".envs/*")
@@ -173,9 +148,6 @@ def main():
             WARNING + "You chose not to use a cloud provider, "
             "media files won't be served in production." + TERMINATOR
         )
-
-    if "{{ cookiecutter.use_travisci }}".lower() == "n":
-        remove_dottravisyml_file()
 
     print(SUCCESS + "Project initialized, keep up the good work!" + TERMINATOR)
 

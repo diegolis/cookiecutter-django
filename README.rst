@@ -1,10 +1,6 @@
 Cookiecutter Django
 =======================
 
-.. image:: https://travis-ci.org/pydanny/cookiecutter-django.svg?branch=master
-    :target: https://travis-ci.org/pydanny/cookiecutter-django?branch=master
-    :alt: Build Status
-
 .. image:: https://pyup.io/repos/github/pydanny/cookiecutter-django/shield.svg
     :target: https://pyup.io/repos/github/pydanny/cookiecutter-django/
     :alt: Updates
