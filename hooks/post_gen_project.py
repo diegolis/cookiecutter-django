@@ -158,11 +158,6 @@ def append_to_gitignore_file(s):
         gitignore_file.write(os.linesep)
 
 
-def set_flags_in_envs(debug=False):
-    set_django_secret_key(production_django_envs_path)
-    set_django_admin_url(production_django_envs_path)
-
-
 def set_flags_in_settings_files():
     set_django_secret_key(os.path.join("config", "settings", "local.py"))
     set_django_secret_key(os.path.join("config", "settings", "test.py"))
@@ -184,7 +179,6 @@ def remove_aws_dockerfile():
 def main():
     debug = "{{ cookiecutter.debug }}".lower() == "y"
 
-    set_flags_in_envs(debug)
     set_flags_in_settings_files()
 
     if "{{ cookiecutter.open_source_license }}" == "Not open source":
