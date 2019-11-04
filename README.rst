@@ -49,7 +49,6 @@ Features
 * Send emails via Anymail_ (using Mailgun_ by default, but switchable)
 * Media storage using Amazon S3 or Google Cloud Storage
 * Docker support using docker-compose_ for development and production (using Traefik_ with LetsEncrypt_ support)
-* Procfile_ for deploying to Heroku
 * Instructions for deploying to PythonAnywhere_
 * Run tests with unittest or pytest
 * Customizable PostgreSQL version
@@ -63,23 +62,13 @@ Optional Integrations
 *These features can be enabled during initial project setup.*
 
 * Serve static files from Amazon S3, Google Cloud Storage or Whitenoise_
-* Configuration for Celery_ and Flower_ (the latter in Docker setup only)
-* Integration with MailHog_ for local email testing
-* Integration with Sentry_ for error logging
 
 .. _Bootstrap: https://github.com/twbs/bootstrap
 .. _django-environ: https://github.com/joke2k/django-environ
 .. _12-Factor: http://12factor.net/
 .. _django-allauth: https://github.com/pennersr/django-allauth
 .. _django-avatar: https://github.com/grantmcconnaughey/django-avatar
-.. _Procfile: https://devcenter.heroku.com/articles/procfile
-.. _Mailgun: http://www.mailgun.com/
 .. _Whitenoise: https://whitenoise.readthedocs.io/
-.. _Celery: http://www.celeryproject.org/
-.. _Flower: https://github.com/mher/flower
-.. _Anymail: https://github.com/anymail/django-anymail
-.. _MailHog: https://github.com/mailhog/MailHog
-.. _Sentry: https://sentry.io/welcome/
 .. _docker-compose: https://github.com/docker/compose
 .. _PythonAnywhere: https://www.pythonanywhere.com/
 .. _Traefik: https://traefik.io/
@@ -160,14 +149,7 @@ Answer the prompts with your own desired options_. For example::
     version [0.1.0]: 0.0.1
     timezone [UTC]: America/Los_Angeles
     use_whitenoise [n]: n
-    use_celery [n]: y
-    use_mailhog [n]: n
-    use_sentry [n]: y
-    use_pycharm [n]: y
-    windows [n]: n
     use_docker [n]: n
-    use_heroku [n]: y
-    use_compressor [n]: y
     Select postgresql_version:
     1 - 11.3
     2 - 10.8
@@ -175,23 +157,11 @@ Answer the prompts with your own desired options_. For example::
     4 - 9.5
     5 - 9.4
     Choose from 1, 2, 3, 4, 5 [1]: 1
-    Select js_task_runner:
-    1 - None
-    2 - Gulp
-    Choose from 1, 2 [1]: 1
     Select cloud_provider:
     1 - AWS
     2 - GCP
     3 - None
     Choose from 1, 2, 3 [1]: 1
-    custom_bootstrap_compilation [n]: n
-    Select open_source_license:
-    1 - MIT
-    2 - BSD
-    3 - GPLv3
-    4 - Apache Software License 2.0
-    5 - Not open source
-    Choose from 1, 2, 3, 4, 5 [1]: 1
     keep_local_envs_in_vcs [y]: y
     debug[n]: n
 
