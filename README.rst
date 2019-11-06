@@ -142,13 +142,6 @@ Answer the prompts with your own desired options_. For example::
     email [you@example.com]: pydanny@gmail.com
     description [Behold My Awesome Project!]: A reddit clone.
     domain_name [example.com]: myreddit.com
-    use_whitenoise [n]: n
-    Select cloud_provider:
-    1 - AWS
-    2 - GCP
-    3 - None
-    Choose from 1, 2, 3 [1]: 1
-    keep_local_envs_in_vcs [y]: y
     debug[n]: n
 
 Enter the project and take a look around::

@@ -7,8 +7,4 @@ psycopg2-binary  # https://github.com/psycopg/psycopg2
 
 # Django
 # ------------------------------------------------------------------------------
-{%- if cookiecutter.cloud_provider == 'AWS' %}
-django-storages[boto3]==1.7.2  # https://github.com/jschneier/django-storages
-{%- elif cookiecutter.cloud_provider == 'GCP' %}
 django-storages[google]==1.7.2  # https://github.com/jschneier/django-storages
-{%- endif %}

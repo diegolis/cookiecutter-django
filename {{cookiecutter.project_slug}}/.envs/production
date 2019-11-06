@@ -6,23 +6,11 @@ DJANGO_SECRET_KEY=!!!SET DJANGO_SECRET_KEY!!!
 DJANGO_ADMIN_URL=!!!SET DJANGO_ADMIN_URL!!!
 DJANGO_ALLOWED_HOSTS=.{{ cookiecutter.domain_name }}
 
-# Security
-# ------------------------------------------------------------------------------
-# TIP: better off using DNS, however, redirect is OK too
-DJANGO_SECURE_SSL_REDIRECT=False
 
-{% if cookiecutter.cloud_provider == 'AWS' %}
-# AWS
-# ------------------------------------------------------------------------------
-DJANGO_AWS_ACCESS_KEY_ID=
-DJANGO_AWS_SECRET_ACCESS_KEY=
-DJANGO_AWS_STORAGE_BUCKET_NAME=
-{% elif cookiecutter.cloud_provider == 'GCP' %}
 # GCP
 # ------------------------------------------------------------------------------
 GOOGLE_APPLICATION_CREDENTIALS=
 DJANGO_GCP_STORAGE_BUCKET_NAME=
-{% endif %}
 
 
 # Redis
@@ -40,9 +28,12 @@ POSTGRES_PASSWORD=!!!SET POSTGRES_PASSWORD!!!
 
 
 PYTHONUNBUFFERED=1
+{% if cookiecutter.use_elastic %}
 ELASTICSEARCH_HOST=http://localhost:9200
+{% endif %}
 GOOGLE_PROJECT=infoxel-tagx
 GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
+
 INFOXEL_AUTH_URL=http://auth.tagx.infoxel.com
 MODERATION_URL=http://moderation.tagx.infoxel.com
 BRANDS_URL=http://brands.tagx.infoxel.com

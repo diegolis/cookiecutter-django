@@ -5,12 +5,6 @@
   "author_name": "",
   "domain_name": "{{cookiecutter.project_slug}}.tagx.infoxel.com",
   "email": "{{ cookiecutter.author_name.lower()|replace(' ', '') }}@infoxel.com",
-  "cloud_provider": [
-    "GCP",
-    "AWS",
-    "None"
-  ],
-  "use_whitenoise": "y",
   "model_name": "",
   "use_elastic": "y",
   "debug": "n"
