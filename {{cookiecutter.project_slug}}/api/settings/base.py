@@ -6,7 +6,7 @@ import environ, os
 
 ROOT_DIR = (
     environ.Path(__file__) - 3
-)  # ({{ cookiecutter.project_slug }}/config/settings/base.py - 3 = {{ cookiecutter.project_slug }}/)
+)  # ({{ cookiecutter.project_slug }}/api/settings/base.py - 3 = {{ cookiecutter.project_slug }}/)
 APPS_DIR = ROOT_DIR.path("{{ cookiecutter.project_slug }}")
 
 env = environ.Env()
@@ -42,9 +42,9 @@ LOCALE_PATHS = [ROOT_DIR.path("locale")]
 # URLS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
-ROOT_URLCONF = "config.urls"
+ROOT_URLCONF = "api.urls"
 # https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
-WSGI_APPLICATION = "config.wsgi.application"
+WSGI_APPLICATION = "api.wsgi.application"
 
 # APPS
 # ------------------------------------------------------------------------------
@@ -68,7 +68,7 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    'api.apps.ApiConfig',
+    'app.apps.ApiConfig',
 ]
 
 

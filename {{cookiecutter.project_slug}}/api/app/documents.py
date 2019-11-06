@@ -1,8 +1,8 @@
 {% if cookiecutter.use_elastic %}
 from django_elasticsearch_dsl import Document
 from django_elasticsearch_dsl.registries import registry
+{% if cookiecutter.function_name %}
 from .models import {{cookiecutter.model_name}}
-
 
 @registry.register_document
 class {{cookiecutter.model_name}}Document(Document):

@@ -22,14 +22,6 @@ COPY ./requirements /requirements
 RUN pip install --no-cache-dir -r /requirements/production.txt \
     && rm -rf /requirements
 
-COPY ./compose/production/entrypoint /entrypoint
-RUN sed -i 's/\r$//g' /entrypoint
-RUN chmod +x /entrypoint
-
-COPY ./compose/production/start /start
-RUN sed -i 's/\r$//g' /start
-RUN chmod +x /start
-
 COPY . /app
 WORKDIR /app
 

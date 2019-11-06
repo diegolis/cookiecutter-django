@@ -1,15 +1,32 @@
 version: '3'
 
 services:
-  django:
+  {% if cookiecutter.use_django %}
+  api:
     build:
       context: ../../
       dockerfile: compose/local/Dockerfile
     image: {{ cookiecutter.project_slug }}_local_django
     volumes:
-      - ../../:/app
+      - ../../api:/code
     env_file:
       - ../../.envs/local
     ports:
       - "8000:8000"
-    command: /start
+    command: python manage.py runserver 0.0.0.0:8000
+  {% endif %}
+
+  {% if cookiecutter.function_name %}
+  {{cookiecutter.function_name}}:
+    build:
+      context: ../../
+      dockerfile: compose/local/Dockerfile
+    image: {{ cookiecutter.project_slug }}_local_function
+    volumes:
+      - ../../functions/{{cookiecutter.function_name}}:/code
+    env_file:
+      - ../../.envs/local
+    ports:
+      - "8000:8000"
+    command: python manage.py run_function {{cookiecutter.function_name}}
+  {% endif %}

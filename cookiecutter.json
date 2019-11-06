@@ -6,6 +6,7 @@
   "domain_name": "{{cookiecutter.project_slug}}.tagx.infoxel.com",
   "email": "{{ cookiecutter.author_name.lower()|replace(' ', '') }}@infoxel.com",
   "model_name": "",
+  "function_name": "",
   "use_elastic": "y",
   "debug": "n"
 }

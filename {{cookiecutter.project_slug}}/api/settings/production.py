@@ -61,7 +61,7 @@ GS_DEFAULT_ACL = "publicRead"
 
 # STATIC
 # ------------------------------------------------------------------------------
-STATICFILES_STORAGE = "config.settings.production.StaticRootGoogleCloudStorage"
+STATICFILES_STORAGE = "api.settings.production.StaticRootGoogleCloudStorage"
 COLLECTFAST_STRATEGY = "collectfast.strategies.gcloud.GoogleCloudStrategy"
 STATIC_URL = f"https://storage.googleapis.com/{GS_BUCKET_NAME}/static/"
 
@@ -80,7 +80,7 @@ class MediaRootGoogleCloudStorage(GoogleCloudStorage):
     file_overwrite = False
 
 
-DEFAULT_FILE_STORAGE = "config.settings.production.MediaRootGoogleCloudStorage"
+DEFAULT_FILE_STORAGE = "api.settings.production.MediaRootGoogleCloudStorage"
 MEDIA_URL = f"https://storage.googleapis.com/{GS_BUCKET_NAME}/media/"
 
 

@@ -20,10 +20,4 @@ RUN apk update \
 COPY ./requirements /requirements
 RUN pip install -r /requirements/local.txt
 
-COPY ./compose/local/start /start
-RUN sed -i 's/\r$//g' /start
-RUN chmod +x /start
-
 WORKDIR /app
-
-ENTRYPOINT ["/start"]

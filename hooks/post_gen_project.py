@@ -127,8 +127,8 @@ def append_to_gitignore_file(s):
 
 
 def set_flags_in_settings_files():
-    set_django_secret_key(os.path.join("config", "settings", "local.py"))
-    set_django_secret_key(os.path.join("config", "settings", "test.py"))
+    set_django_secret_key(os.path.join("api", "settings", "local.py"))
+    set_django_secret_key(os.path.join("api", "settings", "test.py"))
 
 
 def remove_envs_and_associated_files():
