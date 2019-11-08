@@ -64,7 +64,6 @@ Optional Integrations
 .. _12-Factor: http://12factor.net/
 .. _django-allauth: https://github.com/pennersr/django-allauth
 .. _django-avatar: https://github.com/grantmcconnaughey/django-avatar
-.. _Whitenoise: https://whitenoise.readthedocs.io/
 .. _docker-compose: https://github.com/docker/compose
 .. _PythonAnywhere: https://www.pythonanywhere.com/
 .. _Traefik: https://traefik.io/
