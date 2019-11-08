@@ -213,7 +213,7 @@ LOGGING = {
 }
 
 
-{% if cookiecutter.use_elastic %}
+{% if cookiecutter.db == 'elastic' %}
 ELASTICSEARCH_DSL={
     'default': {
         'hosts': env("ELASTICSEARCH_HOST")

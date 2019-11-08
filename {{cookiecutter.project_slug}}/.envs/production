@@ -1,7 +1,7 @@
 # General
 # ------------------------------------------------------------------------------
 # DJANGO_READ_DOT_ENV_FILE=True
-DJANGO_SETTINGS_MODULE=api.settings.production
+DJANGO_SETTINGS_MODULE=service.settings.production
 DJANGO_SECRET_KEY=!!!SET DJANGO_SECRET_KEY!!!
 DJANGO_ADMIN_URL=!!!SET DJANGO_ADMIN_URL!!!
 DJANGO_ALLOWED_HOSTS=.{{ cookiecutter.domain_name }}
@@ -28,13 +28,10 @@ POSTGRES_PASSWORD=!!!SET POSTGRES_PASSWORD!!!
 
 
 PYTHONUNBUFFERED=1
-{% if cookiecutter.use_elastic %}
+{% if cookiecutter.db == 'elastic' %}
 ELASTICSEARCH_HOST=http://localhost:9200
 {% endif %}
 GOOGLE_PROJECT=infoxel-tagx
 GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
 
 INFOXEL_AUTH_URL=http://auth.tagx.infoxel.com
-MODERATION_URL=http://moderation.tagx.infoxel.com
-BRANDS_URL=http://brands.tagx.infoxel.com
-MEDIA_COVERAGE_URL=http://media.tagx.infoxel.com

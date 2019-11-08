@@ -1,5 +1,5 @@
 PYTHONUNBUFFERED=1
-{% if cookiecutter.use_elastic %}
+{% if cookiecutter.db == 'elastic' %}
 ELASTICSEARCH_HOST=http://localhost:9200
 {% endif %}
 PUBSUB_EMULATOR_HOST=localhost:8538
@@ -7,6 +7,3 @@ GOOGLE_PROJECT=infoxel-tagx
 GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
 
 INFOXEL_AUTH_URL=http://localhost:8012
-MODERATION_URL=http://localhost:8013
-BRANDS_URL=http://localhost:8011
-MEDIA_COVERAGE_URL=http://localhost:8010
