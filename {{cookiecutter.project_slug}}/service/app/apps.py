@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class ApiConfig(AppConfig):
+class ServiceConfig(AppConfig):
     name = 'app'
 
     def ready(self):
