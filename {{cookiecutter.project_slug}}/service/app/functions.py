@@ -1,4 +1,4 @@
-{% cookiecutter.db == 'django' %}
+{% if cookiecutter.db == 'django' %}
 from functions.base import *
 from .models import {{cookiecutter.model_name}}
 from .serializers import {{cookiecutter.model_name}}Serializer
